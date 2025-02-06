@@ -1,25 +1,13 @@
-import { createContext } from "react";
-import BasicEffect from "./Components/BasicEffect";
 
-import FetchDataEffect from "./Components/FetchDataEffect";
+import UserProfile from './Components/UserProfile'
+import {UserContext} from './Components/UserContext'
 
-export const FunctionContext = createContext();
 function App() {
-
-
-
-  const handleClick = ()=>{
-    console.log("clickedCOntext");
-  }
   return (
-    <>
-   <FunctionContext.Provider value={handleClick}>
-     <BasicEffect />
-  
-     <FetchDataEffect />
-    </FunctionContext.Provider >
-    </>
-  );
+    <UserContext>
+      <UserProfile />
+    </UserContext>
+  )
 }
 
-export default App;
+export default App
